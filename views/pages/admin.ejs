@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="/assets/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/w3.css">
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="stylesheet" href="/assets/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="d-flex bg-dark mt-0 ">
+        <div class="nav justify-content-between d-flex" >
+        <h1 class="text-light">Administrator page</h1>
+            <div class="bars text-light">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>                
+                
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="text-center text-dark mt-5">Personal Info</h1>
+        <hr class="mt-4">
+        <div class="d-grid">
+            <img src="/assets/img/testimonials-1.jpg" alt="" class="img-fluid img-circle w-25 m-auto">
+        </div>
+        <div class="row">
+            <div class="col-xs-10">
+                <h1 class="text-center">
+                    Personal Details
+                </h1>
+                <div class="card border m-auto p-3">
+                    <p class="h2">Name :</p>
+                    <p class="h2">D.O.B :</p>
+                    <p class="h2">Bio :</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-10">
+                <hr>
+                <div class="text-dark">
+                    <h1 class="text-center">Previous Posts</h1>
+                </div>
+                <hr>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="container">
+                <% data.forEach(datum =>{%>
+                <div class="row d-grid">
+                  <div class="col-sm-10 col-md-8 col-lg-6 m-auto">
+                    <div class="card p-3 mt-5">
+                      <div class="header d-grid">
+                        <div class="card-header">
+                          <%= datum.Date %>
+                        </div>
+                      </div>
+                      <div class="mt-5">
+                        <img src="<%= datum.image%>" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                          <p class="card-text" style="font-family: sans-serif; text-decoration-skip-ink: unset;">
+                            <%= datum.text%>
+                            
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-end">
+                        <a class="btn btn-primary" >Update</a>
+                        <a href="/delete/<%= datum.ID %>" class="btn btn-danger">Delete</a>
+          
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <% })%>
+
+    </div><!--/container-->
+</body>
+</html>
